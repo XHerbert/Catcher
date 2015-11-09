@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catcher", "Catcher\Catcher.csproj", "{A8F16B87-2DF7-47E1-8541-CD136933C3F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API Events", "API Events\API Events.csproj", "{B075190D-0479-4FFA-9EE4-6760B01C42EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataModel", "DataModel\DataModel.csproj", "{7B7C0CDB-3BE2-4F72-AED3-94518B78797C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A8F16B87-2DF7-47E1-8541-CD136933C3F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8F16B87-2DF7-47E1-8541-CD136933C3F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8F16B87-2DF7-47E1-8541-CD136933C3F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8F16B87-2DF7-47E1-8541-CD136933C3F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B075190D-0479-4FFA-9EE4-6760B01C42EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B075190D-0479-4FFA-9EE4-6760B01C42EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B075190D-0479-4FFA-9EE4-6760B01C42EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B075190D-0479-4FFA-9EE4-6760B01C42EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B7C0CDB-3BE2-4F72-AED3-94518B78797C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B7C0CDB-3BE2-4F72-AED3-94518B78797C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B7C0CDB-3BE2-4F72-AED3-94518B78797C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B7C0CDB-3BE2-4F72-AED3-94518B78797C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
