@@ -125,6 +125,7 @@
             this.ClientSize = new System.Drawing.Size(450, 441);
             this.Controls.Add(this.class11);
             this.Controls.Add(this.listView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "TaskForm";
             this.Text = "任务列表";

@@ -133,6 +133,10 @@
   <ItemGroup>
     <None Include="Resources\be1b1cc884ef8e70b1055d53c147eb35.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\mark.ico" />
+    <Content Include="Resources\MarkMe.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

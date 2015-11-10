@@ -17,14 +17,18 @@ namespace Catcher
 {
     public partial class MainFrom : FormMaster
     {
+        public delegate void FormMovingEventHanler();
+        public event FormMovingEventHanler FormMovingEvent;
         private const int BASENUM = 1000;
         private TaskModel task;
+        private TasksForm taskForm;
         private MouseHookEvents mouse;
         public MainFrom()
         {
             InitializeComponent();
             mouse = new MouseHookEvents();
             mouse.OnMouseActivity += new MouseEventHandler(mouse_OnMouseActivity);
+            this.FormMovingEvent += FollowMainForm;
             mouse.Start();
             task = new TaskModel();
         }
@@ -76,7 +80,7 @@ namespace Catcher
             int processID;
             ProcessStartInfo ps = new ProcessStartInfo(task.Application, task.Url);
             ps.WindowStyle = ProcessWindowStyle.Maximized;
-            Process myProc =Process.Start(ps);
+            Process myProc = Process.Start(ps);
             processID = myProc.Id;
             Thread.Sleep((int)numericUpDown2.Value * BASENUM);
             //设置鼠标位置
@@ -120,7 +124,7 @@ namespace Catcher
                 foreach (TaskModel item in tasks)
                 {
                     ExcuteTask(item);
-                    Thread.Sleep((int)numericUpDown1.Value*BASENUM);
+                    Thread.Sleep((int)numericUpDown1.Value * BASENUM);
                 }
             }).Start();
         }
@@ -138,7 +142,6 @@ namespace Catcher
             }
         }
 
-
         private void MainFrom_FormClosed(object sender, FormClosedEventArgs e)
         {
             //卸载钩子
@@ -147,10 +150,31 @@ namespace Catcher
 
         private void btn_ChooseTask_Click(object sender, EventArgs e)
         {
-            TasksForm tform = new TasksForm();
-            tform.Show();
+            taskForm = new TasksForm();
+            //Point taskFormPoint = new Point(this.Location.X-tform.Width,this.Location.Y);
+            //tform.Location = taskFormPoint;
+            FollowMainForm();
+            taskForm.Show();
+        }
+
+        private void FollowMainForm()
+        {
+            Point taskFormPoint = new Point(this.Location.X - taskForm.Width, this.Location.Y);
+            taskForm.Location = taskFormPoint;
+        }
+
+        private void MainFrom_LocationChanged(object sender, EventArgs e)
+        {
+            if (this.FormMovingEvent != null)
+            {
+                if (taskForm != null)
+                {
+                    FormMovingEvent();
+                }
+            }
         }
     }
+
     //静态类的静态方法，扩展方法
     public static class Extension
     {
