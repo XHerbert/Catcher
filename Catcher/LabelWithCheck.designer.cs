@@ -1,4 +1,4 @@
-﻿namespace KnowledgeManager
+﻿namespace Catcher
 {
     partial class LabelWithCheck
     {
