@@ -9,5 +9,5 @@
 
 ###目前效果
 
-![image](https://github.com/XHerbert/Catcher/blob/master/Catcher/Resource/MarkMe.png)
+![image](https://raw.githubusercontent.com/XHerbert/Catcher/master/Catcher/Resources/MarkMe.png "Mark Me!")
 
