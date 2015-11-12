@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EnumValuePack.cs" />
     <Compile Include="TaskModel.cs" />
     <Compile Include="TaskAction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
