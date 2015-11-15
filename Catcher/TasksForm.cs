@@ -70,18 +70,57 @@ namespace Catcher
             return lbck;
         }
 
-        //private Color MakeColor(int color)
-        //{
-        //    //int colorHex = (DataModel.EnumValuePack.ColorTable)color;
-        //    string colorResult="#"+Enum.GetName(typeof(EnumValuePack), color);
-        //    return ColorTranslator.FromHtml(colorResult);
-        //}
-
         private static string ColorConvertor(int flag)
         {
             StringBuilder builder = new StringBuilder("#");
             builder.Append(((EnumValuePack.ColorTable)flag).ToString());
             return builder.ToString();
+        }
+
+        private void selectAll_Click(object sender, EventArgs e)
+        {
+            foreach (Control groupBox in this.Controls)
+            {
+                if (groupBox is GroupBox)
+                {
+                    foreach (Control checkItem in groupBox.Controls)
+                    {
+                        if (checkItem is LabelWithCheck)
+                        {
+                            LabelWithCheck myCheckItem = (LabelWithCheck)checkItem;
+                            if (myCheckItem.Checked == false)
+                            {
+                                myCheckItem.Checked = true;
+                                Console.WriteLine(myCheckItem.CheckState);
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+
+        private void unSelectAll_Click(object sender, EventArgs e)
+        {
+            foreach (Control groupBox in this.Controls)
+            {
+                if (groupBox is GroupBox)
+                {
+                    foreach (Control checkItem in groupBox.Controls)
+                    {
+                        if (checkItem is LabelWithCheck)
+                        {
+                            LabelWithCheck myCheckItem = (LabelWithCheck)checkItem;
+                            if (myCheckItem.Checked == true)
+                            {
+                                myCheckItem.Checked = false;
+                                Console.WriteLine(myCheckItem.CheckState);
+                            }
+
+                        }
+                    }
+                }
+            }
         }
     }
 }

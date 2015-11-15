@@ -38,6 +38,25 @@ namespace Catcher
             height = lb.Height + 6;
         }
         
+        public bool Checked
+        {
+            get
+            {
+                return this.ck.Checked;
+            }
+            set
+            {
+                this.ck.Checked = value;
+            }
+        }
+
+        public CheckState CheckState
+        {
+            get
+            {
+                return this.ck.CheckState;
+            }
+        }
         protected override void OnPaint(PaintEventArgs e)
         {
             Graphics g = e.Graphics;

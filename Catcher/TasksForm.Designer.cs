@@ -37,8 +37,8 @@
             this.labelWithCheck11 = new Catcher.LabelWithCheck();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.unSelectAll = new System.Windows.Forms.Button();
+            this.selectAll = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -72,6 +72,7 @@
             // labelWithCheck1
             // 
             this.labelWithCheck1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.labelWithCheck1.Checked = false;
             this.labelWithCheck1.LabelText = "000";
             this.labelWithCheck1.Location = new System.Drawing.Point(277, 20);
             this.labelWithCheck1.Name = "labelWithCheck1";
@@ -81,6 +82,7 @@
             // labelWithCheck9
             // 
             this.labelWithCheck9.BackColor = System.Drawing.Color.SlateBlue;
+            this.labelWithCheck9.Checked = false;
             this.labelWithCheck9.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labelWithCheck9.ForeColor = System.Drawing.Color.Black;
             this.labelWithCheck9.LabelText = "Music";
@@ -92,6 +94,7 @@
             // labelWithCheck10
             // 
             this.labelWithCheck10.BackColor = System.Drawing.Color.LawnGreen;
+            this.labelWithCheck10.Checked = false;
             this.labelWithCheck10.ForeColor = System.Drawing.Color.Black;
             this.labelWithCheck10.LabelText = "Movie";
             this.labelWithCheck10.Location = new System.Drawing.Point(101, 20);
@@ -102,6 +105,7 @@
             // labelWithCheck11
             // 
             this.labelWithCheck11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.labelWithCheck11.Checked = false;
             this.labelWithCheck11.ForeColor = System.Drawing.Color.Black;
             this.labelWithCheck11.LabelText = "Work";
             this.labelWithCheck11.Location = new System.Drawing.Point(13, 20);
@@ -113,8 +117,8 @@
             // 
             this.groupBox3.BackColor = System.Drawing.Color.Transparent;
             this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Controls.Add(this.button2);
-            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.unSelectAll);
+            this.groupBox3.Controls.Add(this.selectAll);
             this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Location = new System.Drawing.Point(12, 295);
             this.groupBox3.Name = "groupBox3";
@@ -132,26 +136,28 @@
             this.button3.Text = "确定";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // unSelectAll
             // 
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(132, 18);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(106, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "反选";
-            this.button2.UseVisualStyleBackColor = true;
+            this.unSelectAll.ForeColor = System.Drawing.Color.Black;
+            this.unSelectAll.Location = new System.Drawing.Point(132, 18);
+            this.unSelectAll.Name = "unSelectAll";
+            this.unSelectAll.Size = new System.Drawing.Size(106, 23);
+            this.unSelectAll.TabIndex = 1;
+            this.unSelectAll.Text = "反选";
+            this.unSelectAll.UseVisualStyleBackColor = true;
+            this.unSelectAll.Click += new System.EventHandler(this.unSelectAll_Click);
             // 
-            // button1
+            // selectAll
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(18, 18);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "全选";
-            this.button1.UseVisualStyleBackColor = true;
+            this.selectAll.FlatAppearance.BorderSize = 0;
+            this.selectAll.ForeColor = System.Drawing.Color.Black;
+            this.selectAll.Location = new System.Drawing.Point(18, 18);
+            this.selectAll.Name = "selectAll";
+            this.selectAll.Size = new System.Drawing.Size(108, 23);
+            this.selectAll.TabIndex = 0;
+            this.selectAll.Text = "全选";
+            this.selectAll.UseVisualStyleBackColor = true;
+            this.selectAll.Click += new System.EventHandler(this.selectAll_Click);
             // 
             // TasksForm
             // 
@@ -180,8 +186,8 @@
         private Catcher.LabelWithCheck labelWithCheck11;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button unSelectAll;
+        private System.Windows.Forms.Button selectAll;
         private LabelWithCheck labelWithCheck1;
     }
 }
