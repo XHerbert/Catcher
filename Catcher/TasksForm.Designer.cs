@@ -170,6 +170,8 @@
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "TasksForm";
             this.Text = "任务队列";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TasksForm_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TasksForm_FormClosed);
             this.Load += new System.EventHandler(this.TasksForm_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);

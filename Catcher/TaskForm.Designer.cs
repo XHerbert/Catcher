@@ -1,4 +1,6 @@
-﻿namespace Catcher
+﻿using System;
+
+namespace Catcher
 {
     partial class TaskForm
     {
@@ -40,7 +42,7 @@
             System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("百度网盘");
             this.images = new System.Windows.Forms.ImageList(this.components);
             this.listView1 = new System.Windows.Forms.ListView();
-            this.class11 = new Catcher.Class1();
+            this.class11 = new Catcher.ListViewEx();
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.SuspendLayout();
@@ -133,11 +135,21 @@
 
         }
 
+        //internal static TasksForm GetInstanceTask()
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //internal static TasksForm GetInstance()
+        //{
+        //    throw new NotImplementedException();
+        //}
+
         #endregion
 
         private System.Windows.Forms.ListView listView1;
         protected System.Windows.Forms.ImageList images;
-        private Class1 class11;
+        private ListViewEx class11;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.ImageList imageList2;
     }

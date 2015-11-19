@@ -150,13 +150,13 @@ namespace Catcher
 
         private void btn_ChooseTask_Click(object sender, EventArgs e)
         {
-            taskForm = new TasksForm();
-            //Point taskFormPoint = new Point(this.Location.X-tform.Width,this.Location.Y);
-            //tform.Location = taskFormPoint;
+            taskForm = TasksForm.GetInstanceTask();
             FollowMainForm();
             taskForm.Show();
         }
-
+        /// <summary>
+        /// 跟随主窗体
+        /// </summary>
         private void FollowMainForm()
         {
             Point taskFormPoint = new Point(this.Location.X - taskForm.Width, this.Location.Y);

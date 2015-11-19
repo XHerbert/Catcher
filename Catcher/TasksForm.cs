@@ -12,7 +12,8 @@ namespace Catcher
     public partial class TasksForm : Catcher.FormMaster
     {
         private const int iSeed = 10;
-        public TasksForm()
+        private static TasksForm taskFormInstance;
+        private TasksForm()
         {
             InitializeComponent();
         }
@@ -32,9 +33,9 @@ namespace Catcher
             {
                 long tick = DateTime.Now.Ticks;
                 Random ran = new Random((int)(tick & 0xffffffffL) | (int)(tick >> 32));
-                int seed= ran.Next(0, 9);
-                LabelWithCheck lbck = BuildLabel(task.Name,seed);
-                lbck.Location = new System.Drawing.Point(13+(88 * m), 20+(32*k));
+                int seed = ran.Next(0, 9);
+                LabelWithCheck lbck = BuildLabel(task.Name, seed);
+                lbck.Location = new System.Drawing.Point(13 + (88 * m), 20 + (32 * k));
                 URLTasks.Controls.Add(lbck);
                 i++;
                 j++;
@@ -49,7 +50,7 @@ namespace Catcher
         /// <returns></returns>
         private List<TaskModel> GetTaskListOfURL()
         {
-            List<TaskModel> tasks= XmlOperator.GetXmlTaskList();
+            List<TaskModel> tasks = XmlOperator.GetXmlTaskList();
             return tasks;
         }
 
@@ -58,7 +59,7 @@ namespace Catcher
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        private LabelWithCheck BuildLabel(string name,int color)
+        private LabelWithCheck BuildLabel(string name, int color)
         {
             LabelWithCheck lbck = new LabelWithCheck();
             lbck.LabelText = name;
@@ -93,7 +94,7 @@ namespace Catcher
                                 myCheckItem.Checked = true;
                                 Console.WriteLine(myCheckItem.CheckState);
                             }
-                            
+
                         }
                     }
                 }
@@ -121,6 +122,54 @@ namespace Catcher
                     }
                 }
             }
+        }
+
+        private void TasksForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
+            this.Close();
+        }
+
+        private void TasksForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            taskFormInstance = null;
+        }
+
+        /// <summary>
+        /// 获取单例窗体
+        /// </summary>
+        /// <returns></returns>
+        public static TasksForm GetInstanceTask()
+        {
+            if (taskFormInstance == null)
+            {
+                taskFormInstance = new TasksForm();
+            }
+            return taskFormInstance;
+        }
+    }
+
+    public class FormTool
+    {
+        private static bool instance_flag = false;
+        //public static TasksForm GetInstance()
+        //{
+        //    if (!instance_flag)
+        //    {
+        //        taskForm = new TasksForm();
+        //        instance_flag = true;
+        //        return taskForm;
+        //    }
+        //    else
+        //    {
+        //        //Console.WriteLine("you have already create a instance");
+        //        return null;
+        //    }
+        //}
+
+        public static void MM()
+        {
+
         }
     }
 }

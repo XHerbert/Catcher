@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace Catcher
 {
-    class Class1:ListView
+    class ListViewEx:ListView
     {
-        public Class1()
+        public ListViewEx()
         {
             this.SetStyle(System.Windows.Forms.ControlStyles.UserPaint, true);
             this.SetStyle(System.Windows.Forms.ControlStyles.SupportsTransparentBackColor, true);
