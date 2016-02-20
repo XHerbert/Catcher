@@ -67,7 +67,6 @@
             this.button2.TabIndex = 15;
             this.button2.Text = "执行任务";
             this.button2.UseVisualStyleBackColor = true;
-            
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // lblMsg
@@ -241,6 +240,7 @@
             this.button1.TabIndex = 19;
             this.button1.Text = "新增任务";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txt_Y
             // 
